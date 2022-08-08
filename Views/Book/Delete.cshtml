@@ -1,0 +1,40 @@
+﻿@model WebAppBookList.Models.Book
+
+<form  method="post" >
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Delete Book</h2>
+			<hr class="bg-primary"/>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Name" class="form-label">Name :</label>
+			<input asp-for="Name" class="form-control" placeholder="Enter The Name of the book" disabled/>
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Title" class="form-label">Title :</label>
+			<input asp-for="Title" class="form-control" placeholder="Enter The Title of the book" disabled/>
+			<span asp-validation-for="Title" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Genre" class="form-label">Genre :</label>
+			<input asp-for="Genre" class="form-control" placeholder="Enter The Genre of the book" disabled/>
+			<span asp-validation-for="Genre" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="DateOfPublication" class="form-label">Date of Publication :</label>
+			<input asp-for="DateOfPublication" class="form-control" placeholder="Enter The Date of publication of the book" disabled/>
+			<span asp-validation-for="DateOfPublication" class="text-danger"></span>
+		</div>
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<button type="submit" class="btn btn-info" style="width:158px;">Delete</button>
+		<a asp-controller="Book" asp-action="Index" class="btn btn-secondary" style="width:150px;">Back to Book List</a>
+	</div>
+</form>
+
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial"/>
+	}
+}
